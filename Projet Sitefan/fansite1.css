@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: aliceblue;
+    height: 100%; /* Assurez-vous que le body occupe toute la hauteur de la fenêtre */
+}
+
+/* Image de couverture (fond) */
+header {
+    height: 100vh; /* Remplir toute la hauteur de la fenêtre */
+    width: 100vw; /* Remplir toute la largeur de la fenêtre */
+    background-image: url('backround.jpg'); /* Lien vers l'image de fond */
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* Assure que l'image reste fixe en arrière-plan */
+    top: 0;
+    left: 0;
+    z-index: -1; /* L'image de fond est derrière tous les autres éléments */
+}
+
+/* Conteneur principal pour l'image de Kazuya et le texte */
+.main-content {
+    display: flex;
+    justify-content: flex-start; /* Aligner à gauche */
+    align-items: center; /* Centrer verticalement l'image et le texte */
+    position: relative;
+    z-index: 2; /* Assure que tout ce qui se trouve dans .main-content est au-dessus de l'image de fond */
+    padding: 100px;
+    height: 100vh; /* Cette section occupe toute la hauteur de la fenêtre */
+}
+
+/* Image de Kazuya qui sera affichée par-dessus l'image de fond */
+.kazuya-image {
+    width: 400px; /* Ajuste la taille de l'image selon tes préférences */
+    height: auto;
+    border-radius: 10px; /* Arrondir les coins de l'image */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.5); /* Ajouter une ombre pour plus de visibilité */
+    margin-right: 100px; /* Espace entre l'image et le texte */
+}
+
+/* Section contenant le texte à droite de l'image */
+.text-content {
+    max-width: 600px; /* Largeur maximale pour le texte */
+}
+
+/* Titres du texte */
+.text-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.text-content h2 {
+    font-size: 2.5em;
+    color: red;
+    margin-bottom: 15px;
+}
+
+.text-content h3 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Conteneur des deux images côte à côte */
+.images-container {
+    display: flex;                /* Utilisation de flexbox pour aligner les images côte à côte */
+    justify-content: space-between; /* Laisse de l'espace entre les deux images */
+    align-items: center;           /* Centre les images verticalement */
+    width: 100%;                   /* Les images prennent toute la largeur du conteneur */
+    padding: 20px;                 /* Un peu d'espace autour du conteneur */
+}
+
+/* Style de la barre de navigation */
+.navbar {
+    position: absolute;
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 3; /* Place la barre de navigation au-dessus du contenu */
+}
+
+.navbar a {
+    color: aliceblue;
+}
+
+.navbar .logo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 30px;
+}
+
+.navbar .nav-links ul li.active a {
+    color: red;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger {
+    display: none;
+    width: 35px;
+    right: 50px;
+    position: absolute;
+    top: 50px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+    /* Pour les écrans plus larges que les tablettes, mais plus petits que les grands écrans */
+    .main-content {
+      flex-direction: column;
+      padding: 50px;
+    }
+}
+
+
+/* Conteneur des deux images côte à côte */
+.images-container {
+    display: flex;                    /* Utilisation de flexbox pour aligner les images côte à côte */
+    justify-content: space-between;    /* Assure un espace entre les deux images */
+    align-items: center;               /* Centre les images verticalement */
+    width: 100%;                       /* Les images prennent toute la largeur du conteneur */
+    padding: 20px;                     /* Un peu d'espace autour du conteneur */
+    box-sizing: border-box;            /* S'assurer que padding est inclus dans la largeur */
+}
+
+/* Style de l'image Tekken (à gauche) */
+.tekken-image {
+    width: 45%;                        /* Ajuste la taille de l'image Tekken à 40% de la largeur du conteneur */
+    height: auto;                      /* Maintient les proportions de l'image */
+    border-radius: 10px;               /* Arrondir les coins de l'image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre pour plus de visibilité */
+}
+
+/* Style de l'image Super Smash Bros (à droite) */
+.smash-bros-image {
+    width: 45%;                        /* Ajuste la taille de l'image Smash Bros à 40% de la largeur du conteneur */
+    height: auto;                      /* Maintient les proportions de l'image */
+    border-radius: 10px;               /* Arrondir les coins de l'image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre pour plus de visibilité */
+}
+
+/* Wrapper pour l'image Tekken et le texte sous le logo */
+.tekken-wrapper {
+    width: 45%;  /* Garde la même largeur que les images */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Un peu d'espace pour éviter que tout se colle */
+}
+
+/* Texte sous le logo Tekken */
+.tekken-news {
+    margin-top: 5px;  /* Espace entre le logo et le texte */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 100%;  /* Le texte occupe toute la largeur du conteneur */
+}
+
+/* Style du titre "Actualités" */
+.tekken-news h4 {
+    font-size: 1.5em;
+    color: red;
+    margin-bottom: 5px;
+}
+
+/* Style du sous-titre "TEKKEN" */
+.tekken-news h5 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Style de la date */
+.tekken-news p strong {
+    font-size: 1.1em;
+    color: rgb(251, 251, 249);
+}
+
+/* Style du texte descriptif */
+.tekken-news p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+/* Conteneur principal pour les deux sections (Tekken et Smash Bros.) côte à côte */
+.images-container {
+    display: flex;                    /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    justify-content: space-between;    /* Assure un espace entre les deux éléments */
+    align-items: flex-start;           /* Aligner les éléments en haut */
+    width: 100%;                       /* Prendre toute la largeur de l'écran */
+    padding: 20px;                     /* Un peu d'espace autour du conteneur */
+    box-sizing: border-box;            /* Inclut le padding dans le calcul de la largeur */
+}
+
+/* Wrapper pour l'image Tekken, le texte et la vidéo */
+.tekken-wrapper {
+    width: 45%;  /* Prendre 45% de la largeur de l'écran */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;  /* Espace entre les sections */
+}
+
+/* Wrapper pour l'image Smash Bros, le texte et la vidéo */
+.smash-wrapper {
+    width: 45%;  /* Prendre 45% de la largeur de l'écran */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;  /* Espace entre les sections */
+}
+
+/* Style des images */
+.tekken-image, .smash-bros-image {
+    width: 100%;            /* Prendre toute la largeur du conteneur */
+    max-width: 500px;       /* Limiter la largeur maximale */
+    height: auto;           /* Maintenir les proportions */
+    border-radius: 10px;    /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre autour des images */
+    margin-bottom: 15px;    /* Espace sous l'image */
+}
+
+/* Style du texte sous chaque logo */
+.tekken-news, .smash-news {
+    color: white;
+    margin-top: 10px;  /* Espace entre l'image et le texte */
+    padding: 10px;
+    width: 100%;  /* Le texte occupe toute la largeur */
+    border-radius: 10px;
+}
+
+/* Style du titre "Actualités" */
+.tekken-news h4, .smash-news h4 {
+    font-size: 1.5em;
+    color: red;
+    margin-bottom: 5px;
+}
+
+/* Style du sous-titre "TEKKEN" */
+.tekken-news h5 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Style du texte descriptif */
+.tekken-news p, .smash-news p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Style de la vidéo */
+.tekken-video, .smash-video {
+    width: 100%;            /* Prendre toute la largeur du conteneur */
+    max-width: 500px;       /* Limiter la largeur maximale de la vidéo */
+    border-radius: 10px;    /* Coins arrondis */
+    margin-top: 20px;       /* Espace au-dessus de la vidéo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.518); /* Ombre autour de la vidéo */
+}
+/* Section Biographie */
+.biography-section {
+    padding: 50px;
+    background-color: #222222d0;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Titre de la biographie */
+.biography-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: red;
+}
+
+/* Texte de la biographie */
+.biography-section p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+/* Conteneur d'images de la biographie */
+.biography-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+    gap: 20px;
+}
+
+.biography-image {
+    width: 48%; /* Laisser un petit espace entre les images */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Style du lien vers le site fan */
+.fan-link {
+    font-size: 1.2em;
+    margin-top: 50px;
+    color: #ccc;
+}
+
+.fan-site-link {
+    color: red; /* Rouge pour faire ressortir le lien */
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.fan-site-link:hover {
+    color: white; /* Change la couleur du lien au survol */
+}
+
+/* Responsivité des images */
+@media screen and (max-width: 900px) {
+    .biography-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .biography-image {
+        width: 80%; /* Réduit la taille des images sur petits écrans */
+        margin-bottom: 20px;
+    }
+}
+
+/* Style général du footer */
+.footer {
+    background-color: #222; /* Fond sombre */
+    color: white; /* Texte en blanc */
+    padding: 20px 0; /* Espacement vertical */
+    text-align: center; /* Centrer le texte */
+    position: relative; /* Placer le footer après le contenu principal */
+    bottom: 0; /* Coller en bas de la page */
+    width: 100%; /* Occuper toute la largeur */
+}
+
+/* Contenu du footer */
+.footer-content p {
+    font-size: 1.2em;
+    margin-bottom: 15px; /* Espacement sous le texte */
+    color: #ccc; /* Couleur du texte */
+}
+
+/* Liens vers les réseaux sociaux */
+.social-links {
+    display: flex; /* Aligner les icônes horizontalement */
+    justify-content: center; /* Centrer les icônes */
+    gap: 20px; /* Espacement entre les icônes */
+}
+
+/* Icônes des réseaux sociaux */
+.social-icon {
+    width: 40px; /* Taille des icônes */
+    height: 40px; /* Maintenir un carré */
+    display: inline-block;
+    border-radius: 50%; /* Coins arrondis */
+    overflow: hidden; /* Cacher le débordement */
+    background-color: #444; /* Fond gris pour les icônes */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animation douce */
+}
+
+/* Survol des icônes */
+.social-icon:hover {
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+    background-color: #e1e1e1; /* Changer la couleur de fond au survol */
+}
+
+/* Image à l'intérieur des icônes */
+.social-icon img {
+    width: 100%; /* L'image prend toute la largeur */
+    height: 100%; /* L'image prend toute la hauteur */
+    object-fit: cover; /* Ajuster l'image à la taille */
+}
+
+/* Spécifiques pour chaque réseau social */
+.social-icon.facebook {
+    background-color: #3b5998; /* Bleu Facebook */
+}
+
+.social-icon.twitter {
+    background-color: #00acee; /* Bleu Twitter */
+}
+
+.social-icon.instagram {
+    background-color: #e4405f; /* Rose Instagram */
+}
+
+.social-icon.youtube {
+    background-color: #ff0000; /* Rouge YouTube */
+}
+
+
+
+/* Responsivité du menu pour les petits écrans */
+@media screen and (max-width: 900px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar .logo {
+        position: absolute;
+        top: 45px;
+        left: 50px;
+    }
+
+    .navbar .menu-hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.114);
+        backdrop-filter: blur(7px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+  /* Pour les tablettes et écrans plus petits */
+  body {
+    padding: 10px;
+  }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li {
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+}
