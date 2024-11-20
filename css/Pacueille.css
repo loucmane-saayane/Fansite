@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(252, 251, 250);
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.couleur {
+   color: rgb(11, 10, 10);
+}
+
+/*menu de navigation*/
+.iris {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(188, 162, 75);
+    padding: 10px;
+    list-style: none;
+}
+
+.nav li {
+    color: rgb(241, 239, 239);
+}
+
+.top-page {
+    background-color: gray;
+    margin-left: 0%;
+}
+
+.histoire {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titre {
+    color: rgb(5, 5, 5);
+    justify-content: flex-end;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+}
+
+.titre2 {
+    color: black;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: space-evenly;
+}
+
+.groupe1, .groupe2, .groupe3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+@media only screen and (min-width: 650px) and (max-height: 895px) {
+    .charpic1 {
+        width: 60%;
+    }
+
+    .section {
+        width: 48%;
+    }
+}
+
+.headerOne{
+    background-color:rgb(160, 152, 152);
+    padding: 20px;
+}
+
+.end{
+    background-color: rgb(152, 163, 163);
+    padding: 20px;
+}
+
+.btn-contact {
+    background-color: #fdfefe;
+    color: rgb(7, 7, 7);
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-contact:hover {
+    background-color: #6b6e6b;
+}
